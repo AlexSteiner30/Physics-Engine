@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 3rem;
+    width: 100vw;
 }
 
 footer {
@@ -21,21 +22,20 @@ main {
     color: black;
     box-shadow: 15px 15px 40px 2px black;
     width: 25rem;
+    margin-bottom: 20px;
     transition: all 500ms ease-in-out;
 }
 
 .preview:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: black;
     color: white;
 }
 
-#all-previews {
+#all-preview {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: start;
-    width: 100vw;
+    justify-content: space-evenly;
 }
 
 #background {
