@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Engine</title>
 
-    <script type="module" src="js/draw.js"></script>
+    <script src="js/draw.js"></script>
     <script src="js/Vectors/Vector2.js"></script>
-    <script type="module" src="js/Rigidbody/Rigidbody2D.js"></script>
-    <script type="module" src="js/Object/Object.js"></script>
+    <script  src="js/Rigidbody/Rigidbody2D.js"></script>
+    <script src="js/Object/Object.js"></script>
 
 </head>
 <body>
@@ -24,8 +24,7 @@
     var vec = new Vector2(500, 40);
 
     var obj = new Object(vec, 10, 10, 'red', false, 2);
-    console.log(obj);
-    //var Rigidbody = new Rigidbody2D();
+    obj.AddComponent(new Rigidbody2D());
 
 </script>
 </html>

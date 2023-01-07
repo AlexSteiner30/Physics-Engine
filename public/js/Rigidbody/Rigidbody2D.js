@@ -11,4 +11,8 @@ class Rigidbody2D{
         this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
+    Execute(){
+        console.log("A");
+    }
+
 }
