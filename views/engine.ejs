@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Engine</title>
+
+    <script src="js/draw.js"></script>
+    <script src="js/Vectors/Vector2.js"></script>
+
+</head>
+<body>
+    <canvas id="canvas" width="1024" height="512" style="border:1px solid #000000;"></canvas>
+    <div class="control-panel">
+        <p>g:</p>
+        <input type="range" min="-100" max="100" value="-9.81">
+    </div>
+</body>
+
+<script>
+    var vec = new Vector2(500, 40);
+
+    DrawRectangle(vec, 100, 100, 'red', false, 5);
+    //DrawCircle(500, 250, 300, 'red', false, 5);
+
+
+    console.log(vec);
+</script>
+</html>

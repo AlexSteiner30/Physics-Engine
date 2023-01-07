@@ -1,2 +1,2 @@
 clear
-node.js
+node server.js

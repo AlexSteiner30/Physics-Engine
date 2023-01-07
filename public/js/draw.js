@@ -1,5 +1,5 @@
 
-function DrawRectangle(w, h, x, y, color, fill, thickness){
+function DrawRectangle(position, w, h, color, fill, thickness){
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -9,16 +9,16 @@ function DrawRectangle(w, h, x, y, color, fill, thickness){
     ctx.beginPath();
 
     if(fill){
-        ctx.fillRect(x, y, w, h);
+        ctx.fillRect(position.x, position.y, w, h);
     }
     else{
-        ctx.rect(x, y, w, h, color);
+        ctx.rect(position.x, position.y, w, h, color);
     }
 
     ctx.stroke();
 }
 
-function DrawCircle(x, y, r, color, fill, thickness){
+function DrawCircle(position, r, color, fill, thickness){
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -28,10 +28,10 @@ function DrawCircle(x, y, r, color, fill, thickness){
     ctx.beginPath();
 
     if(fill){
-        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.arc(position.x, position.y, r, 0, 2 * Math.PI);
     }
     else{
-        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.arc(position.x, position.y, r, 0, 2 * Math.PI);
     }
 
     ctx.stroke();
