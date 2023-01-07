@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 3rem;
+}
+
+footer {
+    background-color: black;
+    width: 100vw;
+    height: 15vh;
+}
+
+main {
+    background: linear-gradient(35deg, red, blue);
+    opacity: 0.98;
+    padding-left: 10px;
+}
+
+.preview {
+    background-color: white;
+    color: black;
+    box-shadow: 15px 15px 40px 2px black;
+    width: 25rem;
+    transition: all 500ms ease-in-out;
+}
+
+.preview:hover {
+    transform: scale(1.2);
+    background-color: black;
+    color: white;
+}
+
+#all-previews {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    width: 100vw;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#everything {
+    min-height: 85vh;
+}
+
+#screen {
+    visibility: hidden;
+}
