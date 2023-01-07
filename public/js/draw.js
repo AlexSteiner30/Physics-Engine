@@ -1,5 +1,5 @@
 
-function DrawRectangle(position, w, h, color, fill, thickness){
+export function DrawRectangle(position, w, h, color, fill, thickness){
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -16,6 +16,8 @@ function DrawRectangle(position, w, h, color, fill, thickness){
     }
 
     ctx.stroke();
+
+    console.log("A");
 }
 
 function DrawCircle(position, r, color, fill, thickness){
