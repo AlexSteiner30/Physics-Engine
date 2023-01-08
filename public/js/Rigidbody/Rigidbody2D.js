@@ -4,12 +4,18 @@ class Rigidbody2D{
     };
 
     ExecuteAwake(){
-        // Components
-        this.sprite = this.object.GetComponent("Sprite2D");
+
     }
 
     ExecuteStart(){
+        // Components
+        this.sprite = this.object.GetComponent("Sprite2D");
 
+        this.object.components.forEach(element => {
+            console.log(element);
+        });
+        
+        console.log(this.sprite);
     }
 
     ExecuteUpdate(){

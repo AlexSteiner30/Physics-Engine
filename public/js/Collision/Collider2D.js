@@ -3,13 +3,13 @@ class Collider2D{
     }
 
     ExecuteAwake(){
-        // Components
-        this.sprite = this.object.GetComponent("Sprite2D");
-        this.rb = this.object.GetComponent("Rigidbody2D");
+       
     }
 
     ExecuteStart(){
-        
+        // Components
+        this.sprite = this.object.GetComponent("Sprite2D");
+        this.rb = this.object.GetComponent("Rigidbody2D");
     }
 
     ExecuteUpdate(){

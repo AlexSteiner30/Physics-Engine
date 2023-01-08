@@ -52,7 +52,6 @@ class Object{
     GetComponent(component){
         this.components.forEach(x =>{
             if(x.constructor.name === component){
-                console.log(x);
                 return(component);
             }
         });
