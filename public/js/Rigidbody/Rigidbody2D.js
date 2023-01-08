@@ -16,7 +16,8 @@ class Rigidbody2D{
     }
 
     Simulate(){
-        console.log(this.object.components[0]);
-        //this.sprite.position = new Vector2(0, 0);
+        var sprite = this.object.components[0];
+
+        sprite.position.sub(new Vector2(0, g));
     }
 }

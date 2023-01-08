@@ -15,13 +15,13 @@ function Awake(){
 
 function Start(){
     // call the start function in all the objects
-    // then call Update - (50 FPS)
+    // then call Update
     
     objects.forEach(object => {
         object.Start();
     });
 
-    setInterval(Update, 500);
+    setInterval(Update, 20);
 }
 
 function Update(){

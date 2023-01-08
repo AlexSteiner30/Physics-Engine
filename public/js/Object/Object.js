@@ -48,11 +48,7 @@ class Object{
         this.components.pop(component);
     }
 
-    GetComponent(component){
-        this.components(x => {
-            if(component.constructor.name === x.constructor.name){
-                return x;
-            }
-        });
+    GetComponent(index){
+        return this.components[index];
     }
 }
