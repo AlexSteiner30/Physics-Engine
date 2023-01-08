@@ -17,4 +17,23 @@ class Vector2{
         return this * (1 / length(this))
     }
 
+    add(vector) {
+        this.x += vector.x;
+        this.y += vector.y;
+    }
+
+    sub(vector) {
+        this.x -= vector.x;
+        this.y -= vector.y;
+    }
+
+    mult(num) {
+        this.x *= num;
+        this.y *= num;
+    }
+
+    mult(num) {
+        this.x /= num;
+        this.y /= num;
+    }
 }
