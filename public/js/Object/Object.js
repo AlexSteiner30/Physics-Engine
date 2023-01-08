@@ -49,6 +49,10 @@ class Object{
     }
 
     GetComponent(component){
-        return component;
+        this.components(x => {
+            if(component.constructor.name === x.constructor.name){
+                return x;
+            }
+        });
     }
 }

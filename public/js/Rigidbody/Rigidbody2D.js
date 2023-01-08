@@ -1,7 +1,6 @@
-class Rigidbody2D extends Object{
-    constructor(){
-        super();
-        this.ctx = getCanvas();
+class Rigidbody2D{
+    constructor(_object){
+        this.object = _object;
     };
 
     ExecuteAwake(){
@@ -17,8 +16,7 @@ class Rigidbody2D extends Object{
     }
 
     Simulate(){
-        this.sprite = GetComponent(components[0]);
-        console.log(this.sprite);
+        console.log(this.object.components[0]);
         //this.sprite.position = new Vector2(0, 0);
     }
 }
