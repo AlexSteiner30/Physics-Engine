@@ -13,6 +13,7 @@ class Sprite2D{
         this.thickness = _thickness;
     };
 
+
     ExecuteAwake(){
         Draw(this.sprite, this.position, this.w, this.h, this.color, this.fill, this.thickness);
     }

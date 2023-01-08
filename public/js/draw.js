@@ -5,7 +5,8 @@ function Draw(sprite, position, w, h, color, fill, thickness){
     }
     else if(sprite === 'circle'){
         var d = w;
-        DrawCircle(position, d, color, fill, thickness);
+
+        DrawCircle(position, w, color, fill, thickness);
     }
 }
 
@@ -19,7 +20,7 @@ function DrawRectangle(position, w, h, color, fill, thickness){
     ctx.beginPath();
 
     if(fill){
-        ctx.fillRect(position.x, position.y, w, h);
+        ctx.fillRect(position.x, position.y, w, h, color);
     }
     else{
         ctx.rect(position.x, position.y, w, h, color);

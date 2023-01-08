@@ -7,7 +7,8 @@
     <title>Physics Engine</title>
 
     <script src="js/Draw.js"></script>
-    <script src="js/Manager.js"></script>
+    <script src="js/Managers/Manager.js"></script>
+    <script src="js/Managers/VariableManager.js"></script>
 
     <script src="js/Object/Object.js"></script>
     <script src="js/Vectors/Vector2.js"></script>
@@ -16,21 +17,45 @@
 
 </head>
 <body>
-    <canvas id="canvas" width="1024" height="512" style="border:1px solid #000000;"></canvas>
+    <canvas id="canvas" width="1024" height="512" style="border:1px solid #000000;">
+    Browser doens't support the canvas
+    </canvas>
+
     <div class="control-panel">
-        <p>g:</p>
-        <input type="range" min="-100" max="100" value="-9.81">
+
+        <div class="gravity">
+
+            <h1>Gravity Values</h1>
+
+            <p id="g">g costant:</p>
+            <input id="gravity-slider" type="range" min="-100" max="100" value="-9.81">
+
+        </div>
+
+        <hr>
+        
     </div>
 </body>
 
 <script>
-    var vec = new Vector2(500, 40);
-    var obj = new Object();
+    function Inizialize(){
+        var pos = new Vector2(500, 40);
+        var obj = new Object();
 
-    obj.AddComponent(new Sprite2D('rect', vec, 10, 10, 'red', false, 2));
-    obj.AddComponent(new Rigidbody2D());
+        obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', false, 2));
+        //obj.AddComponent(new Rigidbody2D());
 
-    Awake();
+        var pos2 = new Vector2(80, 350);
+        var obj2 = new Object();
+
+        obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', false, 2));
+
+        Awake();
+    }
+
+    Inizialize();
+
+    setInterval(UpdateVariables, 1);
 
 </script>
 </html>

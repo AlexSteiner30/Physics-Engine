@@ -1,9 +1,6 @@
 // Variables
 let objects = [];
 
-var g = -9.81;
-
-
 // Main functions
 function Awake(){ 
     // call the awake function in all the objects
