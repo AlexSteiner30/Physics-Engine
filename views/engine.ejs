@@ -18,18 +18,19 @@
 </head>
 <body>
     <canvas id="canvas" width="1024" height="512" style="border:1px solid #000000;">
-    Browser doens't support the canvas
+    Browser doens't support the canvas element.
     </canvas>
 
     <div class="control-panel">
 
+        <h1>Control Panel</h1>
+
         <div class="gravity">
 
-            <h1>Gravity Values</h1>
+            <h3>Gravity Values</h3>
 
             <p id="g">g costant:</p>
-            <input id="gravity-slider" type="range" min="-100" max="100" value="-9.81">
-
+            <input id="gravity-slider" type="range" min="-100.81" max="100.81" value="-9.81">
         </div>
 
         <hr>
@@ -42,7 +43,7 @@
         var pos = new Vector2(500, 40);
         var obj = new Object();
 
-        obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', false, 2));
+        obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
         //obj.AddComponent(new Rigidbody2D());
 
         var pos2 = new Vector2(80, 350);

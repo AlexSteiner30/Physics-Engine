@@ -25,8 +25,8 @@ function DrawRectangle(position, w, h, color, fill, thickness){
     ctx.beginPath();
 
     if(fill){
-        ctx.fillStyle = fill;
-        ctx.fillRect(position.x, position.y, w, h, color);
+        ctx.fillStyle = color;
+        ctx.fillRect(position.x, position.y, w, h);
     }
     else{
         ctx.rect(position.x, position.y, w, h);
@@ -44,7 +44,7 @@ function DrawCircle(position, d, color, fill, thickness){
     ctx.beginPath();
 
     if(fill){
-        ctx.fillStyle = fill;
+        ctx.fillStyle = color;
         ctx.arc(position.x, position.y, d, 0, 2 * Math.PI);
         ctx.fill();
     }
