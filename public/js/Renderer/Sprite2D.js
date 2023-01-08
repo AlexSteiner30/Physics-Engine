@@ -1,9 +1,9 @@
 class Sprite2D{
 
-    constructor(_sprite, _position, _w, _h, _color, _fill, _thickness){
+    constructor(_name, _position, _w, _h, _color, _fill, _thickness){
         this.ctx = getCanvas();
 
-        this.sprite = _sprite;
+        this.name = _name;
         this.position = _position;
         this.w = _w;
         this.h = _h;
@@ -14,7 +14,7 @@ class Sprite2D{
 
 
     ExecuteAwake(){
-        Draw(this.sprite, this.position, this.w, this.h, this.color, this.fill, this.thickness);
+        Draw(this.name, this.position, this.w, this.h, this.color, this.fill, this.thickness);
     }
 
     ExecuteStart(){
@@ -22,6 +22,6 @@ class Sprite2D{
     }
 
     ExecuteUpdate(){
-        Draw(this.sprite, this.position, this.w, this.h, this.color, this.fill, this.thickness);
+        Draw(this.name, this.position, this.w, this.h, this.color, this.fill, this.thickness);
     }
 }

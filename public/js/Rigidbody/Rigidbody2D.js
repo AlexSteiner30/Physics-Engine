@@ -9,26 +9,19 @@ class Rigidbody2D{
 
     ExecuteStart(){
         // Components
-        this.sprite = this.object.GetComponent("Sprite2D");
-
-        this.object.components.forEach(element => {
-            console.log(element);
-        });
-        
-        console.log(this.sprite);
+        //this.sprite = this.object.GetComponent("Sprite2D"); // need to fix this
+        this.sprite = this.object.components[0];
     }
 
     ExecuteUpdate(){
         this.Simulate();
     }
 
-    Simulate(){
-        var canvasHeight = document.getElementById("canvas").height;
-        
+    Simulate(){ 
         //change position
         this.sprite.position.add(this.velocity);
         
         //increase the acceleration
-        this.acceleration.sub(new Vector2(0, -g));
+        this.velocity.sub(new Vector2(0, -g));
     }
 }
