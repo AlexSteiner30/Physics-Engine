@@ -17,23 +17,57 @@ class Vector2{
         return this * (1 / length(this))
     }
 
+    //add a Vector2 to another one
     add(vector) {
         this.x += vector.x;
         this.y += vector.y;
     }
 
+    //substracts a Vector2 from another one
     sub(vector) {
         this.x -= vector.x;
         this.y -= vector.y;
     }
 
+    //multiplies both x and y by a certain number
     mult(num) {
         this.x *= num;
         this.y *= num;
     }
 
-    mult(num) {
+    //divides both x and y by a certain number
+    div(num) {
         this.x /= num;
         this.y /= num;
+    }
+
+    //sets the vector to be equal to its parameters(a is x coordinate and b is y coordiante). Can also pass a Vector2 as parameter
+    set(a, b=null) {
+        if (b!= null) {
+            this.x = a;
+            this.y = b;
+        }
+        else {
+            this.x = a.x;
+            this.y = a.y;
+        }
+    }
+
+    //returns a copy of the vector
+    get() {
+        return Vector2(this.x, this.y);
+    }
+
+    //limits magnitude of the vector
+    limit(max) {
+        if (this.sqrLength() > max*max) {
+            this.set(this.normalized());
+            this.mult(max);
+        }
+    }
+
+    //returns distance between 2 vectors
+    dist(vector) {
+        return Math.sqrt(Math.pow(this.x-vector.x, 2)+Math.pow(this.y-vector.y, 2));
     }
 }

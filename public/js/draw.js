@@ -1,3 +1,9 @@
+//get the canvas so that you can draw, you can override the canvas you get using the id of that canvas(optional)
+function getCanvas(canvasId="canvas") {
+    var c = document.getElementById(canvasId);
+    return c.getContext("2d");
+}
+
 
 function Draw(sprite, position, w, h, color, fill, thickness){
     if(sprite === 'rect'){
@@ -11,8 +17,7 @@ function Draw(sprite, position, w, h, color, fill, thickness){
 }
 
 function DrawRectangle(position, w, h, color, fill, thickness){
-    var c = document.getElementById("canvas");
-    var ctx = c.getContext("2d");
+    var ctx = getCanvas();
 
     ctx.lineWidth = thickness;
     ctx.strokeStyle = color;
@@ -30,8 +35,7 @@ function DrawRectangle(position, w, h, color, fill, thickness){
 }
 
 function DrawCircle(position, d, color, fill, thickness){
-    var c = document.getElementById("canvas");
-    var ctx = c.getContext("2d");
+    var ctx = getCanvas();
 
     ctx.lineWidth = thickness;
     ctx.strokeStyle = color;
@@ -45,5 +49,14 @@ function DrawCircle(position, d, color, fill, thickness){
         ctx.arc(position.x, position.y, d, 0, 2 * Math.PI);
     }
 
+    ctx.stroke();
+}
+
+function drawForceArrow(position, vector, color) {
+    var ctx = getCanvas();
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.moveTo(position.x, position.y);
+    ctx.lineTo(vector.x, vector.y);
     ctx.stroke();
 }
