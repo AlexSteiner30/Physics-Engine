@@ -56,6 +56,16 @@ class Object{
             }
         });
 
-        return 'No component found!';
+        return false;
+    }
+
+    GetAllComponents(){
+        var allComponents = [];
+
+        this.components.forEach(x =>{
+            allComponents.push(x);
+        });
+
+        return allComponents;
     }
 }

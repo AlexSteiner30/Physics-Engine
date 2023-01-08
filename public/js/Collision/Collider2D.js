@@ -1,5 +1,6 @@
 class Collider2D{
     constructor(){
+        this.colliders = [];
     }
 
     ExecuteAwake(){
@@ -12,32 +13,33 @@ class Collider2D{
         this.sprite = this.object.components[0];
         this.rb = this.object.GetComponent("Rigidbody2D");
 
-        console.log(this.sprite);
+        this.GetAllColliders();
     }
 
     ExecuteUpdate(){
-        var canvasHeight = document.getElementById("canvas").height;
-       
-        //colisions with top and bottom of canvas
+        this.DetectCollisions();
+    }
+
+    DetectCollisions(){
         if (this.sprite.name === 'rect') {
-            if (this.sprite.position.y+this.sprite.h >= canvasHeight && g >= 0) {
-                this.velocity.set(0, 0);
-                this.sprite.position.y = canvasHeight-this.sprite.h;
-            }
-            else if (this.ExecuteAwakesprite.position.y < 0 && g <= 0) {
-                this.velocity.set(0, 0);
-                this.sprite.position.y = 0;
-            }
+            this.colliders.forEach(collider => {
+                console.log(collider);
+                if(this.sprite.position.x + this.sprite.w >= collider.object.component[0].position.x){
+                    console.log('Colliding with ' + collider.object.sprite.sprite);
+                }
+            });
         }
-        else if (this.sprite.name === "circle") {
-            if (this.sprite.position.y + this.sprite.d >= canvasHeight) {
-                this.rb.velocity.set(0, 0);
-                this.sprite.position.y = canvasHeight-this.sprite.d;
+    }
+
+    GetAllColliders(){
+        objects.forEach(object => {
+            if(object != this.object){
+                object.GetAllComponents().forEach(component =>{ 
+                    if(component.constructor.name === 'Collider2D'){
+                        this.colliders.push(component);
+                    }
+                });
             }
-            else if (this.sprite.position.y-this.sprite.d < 0) {
-                this.rb.velocity.set(0, 0);
-                this.sprite.position.y = 0;
-            }
-        }
+        });
     }
 }

@@ -13,6 +13,12 @@ function Initialize(){
 
     obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', true, 2));
 
+    var pos3 = new Vector2(200, 500);
+    var obj3 = new Object();
+
+    obj3.AddComponent(new Sprite2D('rect', pos3, 600, 100, 'black', true, 2));
+    obj3.AddComponent(new Collider2D());
+
     Awake();
 }
 
