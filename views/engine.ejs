@@ -44,12 +44,12 @@
         var obj = new Object();
 
         obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
-        //obj.AddComponent(new Rigidbody2D());
+        obj.AddComponent(new Rigidbody2D());
 
         var pos2 = new Vector2(80, 350);
         var obj2 = new Object();
 
-        obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', false, 2));
+        obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', true, 2));
 
         Awake();
     }
