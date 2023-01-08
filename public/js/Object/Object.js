@@ -1,35 +1,50 @@
 
 class Object{
-    constructor(_position,_w, _h, _color, _fill, _thickness){
+    constructor(_position){
         this.position = _position;
-        this.w = _w;
-        this.h = _h;
-        this.color = _color;
-        this.fill = _fill;
-        this.thickness = _thickness;
 
         this.components = [];
-
-        this.Start();
     }
 
+    Awake(){
+        this.components.forEach(component => {
+            try{
+                component.ExecuteAwake();
+            }
+            catch{
+                component.ExecuteAwake();
+            }
+        });
+    }
+
+    Start(){
+        this.components.forEach(component => {
+            try{
+                component.ExecuteAwake();
+            }
+            catch{
+                component.ExecuteAwake();
+            }
+        });
+    }
+
+    Update(){
+        this.components.forEach(component => {
+            try{
+                component.ExecuteUpdate();
+            }
+            catch{
+                component.ExecuteUpdate();
+            }
+        });
+    }
+
+    // Functions
     AddComponent(component){
         this.components.push(component);
     }
 
-    Start(){
-        AddToCanvas(this);
-        
-        DrawRectangle(this.position, this.w, this.h, this.color, this.fill, this.thickness);
-
-        //setTimeout(this.Update(), 5000) // 50 FPS
-    }
-
-    Update(){
-        console.log('Update');
-
-        this.components.forEach(component => {
-            component.Execute();
-        });
+    RemoveComponent(component){
+        this.components.pop(component);
     }
 }

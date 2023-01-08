@@ -6,12 +6,19 @@ class Rigidbody2D{
  
     };
 
-    Simulate(){
-        this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ExecuteAwake(){
+
     }
 
-    Execute(){
+    ExecuteStart(){
+
+    }
+
+    ExecuteUpdate(){
         this.Simulate();
     }
 
+    Simulate(){
+        
+    }
 }
