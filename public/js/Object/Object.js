@@ -47,4 +47,8 @@ class Object{
     RemoveComponent(component){
         this.components.pop(component);
     }
+
+    GetComponent(component){
+        return component;
+    }
 }

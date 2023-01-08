@@ -27,9 +27,8 @@
     var vec = new Vector2(500, 40);
     var obj = new Object();
 
-    DrawRectangle(vec, 10, 10, 'red', false, 2)
-
     obj.AddComponent(new Sprite2D('rect', vec, 10, 10, 'red', false, 2));
+    obj.AddComponent(new Rigidbody2D());
 
     Awake();
 

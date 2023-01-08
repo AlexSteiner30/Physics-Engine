@@ -14,7 +14,7 @@ class Sprite2D{
     };
 
     ExecuteAwake(){
-        Draw(this.sprite, this.position, this.w, this.color, this.fill, this.thickness);
+        Draw(this.sprite, this.position, this.w, this.h, this.color, this.fill, this.thickness);
     }
 
     ExecuteStart(){
@@ -22,7 +22,6 @@ class Sprite2D{
     }
 
     ExecuteUpdate(){
-        Draw(this.sprite, this.position, this.w, this.color, this.fill, this.thickness);
-        DrawRectangle(vec, 10, 10, 'red', false, 2);
+        Draw(this.sprite, this.position, this.w, this.h, this.color, this.fill, this.thickness);
     }
 }
