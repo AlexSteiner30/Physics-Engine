@@ -3,20 +3,8 @@ let objects = [];
 
 var g = -9.81;
 
-// Functions
-function AddToCanvas(item){
-    objects.push(item);
-}
 
-function RemoveFromCanvas(item){
-    objects.pop(item);
-}
-
-function UpdateItemInCanvas(item, newItem){
-    objects.find(item) = newItem;
-}
-
-// Main function
+// Main functions
 function Awake(){ 
     // call the awake function in all the objects
     // then call start
@@ -35,8 +23,30 @@ function Start(){
     objects.forEach(object => {
         object.Start();
     });
+
+    setInterval(Update, 500);
 }
 
 function Update(){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    objects.forEach(object => {
+        object.Update();
+    });
+}
+
+// Functions
+function AddObject(object){
+    objects.push(object);
+}
+
+function RemoveObject(object){
+    objects.pop(object);
+}
+
+function UpdateObject(object, newObject){
+    objects.find(object) = newObject;
 }

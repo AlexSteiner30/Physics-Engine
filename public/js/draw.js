@@ -1,7 +1,7 @@
 
 function Draw(sprite, position, w, h, color, fill, thickness){
     if(sprite === 'rect'){
-        DrawRectangle()
+        DrawRectangle(position, w, h, color, fill, thickness);
     }
     else if(sprite === 'circle'){
         var d = w;

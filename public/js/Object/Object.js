@@ -1,9 +1,9 @@
 
 class Object{
-    constructor(_position){
-        this.position = _position;
-
+    constructor(){
         this.components = [];
+        
+        AddObject(this);
     }
 
     Awake(){
@@ -12,7 +12,7 @@ class Object{
                 component.ExecuteAwake();
             }
             catch{
-                component.ExecuteAwake();
+                // no awake function found
             }
         });
     }
@@ -20,10 +20,10 @@ class Object{
     Start(){
         this.components.forEach(component => {
             try{
-                component.ExecuteAwake();
+                component.ExecuteStart();
             }
             catch{
-                component.ExecuteAwake();
+                // no start function found
             }
         });
     }
@@ -34,7 +34,7 @@ class Object{
                 component.ExecuteUpdate();
             }
             catch{
-                component.ExecuteUpdate();
+                // no update function found
             }
         });
     }

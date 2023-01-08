@@ -7,10 +7,11 @@
     <title>Physics Engine</title>
 
     <script src="js/Draw.js"></script>
+    <script src="js/Manager.js"></script>
+
+    <script src="js/Object/Object.js"></script>
     <script src="js/Vectors/Vector2.js"></script>
     <script  src="js/Rigidbody/Rigidbody2D.js"></script>
-    <script src="js/Object/Object.js"></script>
-    <script src="js/Manager.js"></script>
     <script src="js/Renderer/Sprite2D.js"></script>
 
 </head>
@@ -24,10 +25,13 @@
 
 <script>
     var vec = new Vector2(500, 40);
+    var obj = new Object();
 
-    var obj = new Object(vec, 10, 10, 'red', false, 2);
-    obj.AddComponent(new Sprite2D(vec));
-    obj.Update();
+    DrawRectangle(vec, 10, 10, 'red', false, 2)
+
+    obj.AddComponent(new Sprite2D('rect', vec, 10, 10, 'red', false, 2));
+
+    Awake();
 
 </script>
 </html>
