@@ -59,7 +59,22 @@
         Awake();
     }
 
-    Inizialize();
+    function reset() {
+        console.log("Hello world");
+        // Set a fake timeout to get the highest timeout id
+        var highestTimeoutId = setTimeout(";");
+        for (var i = 0 ; i < highestTimeoutId ; i++) {
+            clearTimeout(i); 
+        }
+        let ctx = getCanvas();
+        let canvas = document.getElementById("canvas");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        delete(obj);
+        delete(obj2);
+        Initialize();
+    }
+
+    Initialize();
 
     setInterval(UpdateVariables, 1);
 
