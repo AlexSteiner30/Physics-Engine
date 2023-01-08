@@ -26,7 +26,7 @@ function Start(){
         object.Start();
     });
 
-    setInterval(Update, 15);
+    setInterval(Update, 30);
 }
 
 function Update(){
