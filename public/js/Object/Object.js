@@ -18,6 +18,8 @@ class Object{
     }
 
     Start(){
+        AddToCanvas(this);
+        
         DrawRectangle(this.position, this.w, this.h, this.color, this.fill, this.thickness);
 
         //setTimeout(this.Update(), 5000) // 50 FPS
