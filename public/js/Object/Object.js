@@ -45,10 +45,16 @@ class Object{
     }
 
     RemoveComponent(component){
-        this.components.pop(component);
+        this.components.slice(component);
     }
 
-    GetComponent(index){
-        return this.components[index];
+    GetComponent(component){
+        this.components.forEach(x =>{
+            if(x.constructor.name === component){
+                return(component);
+            }
+        });
+
+        return 'No component found!';
     }
 }

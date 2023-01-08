@@ -1,11 +1,12 @@
 class Rigidbody2D{
     constructor(_object){
         this.object = _object;
-        this.acceleration = new Vector2(0, 0);
     };
 
     ExecuteAwake(){
-
+        // Components
+        this.collider = this.object.GetComponent("Collider2D");
+        this.sprite = this.object.GetComponent("Sprite2D");
     }
 
     ExecuteStart(){
@@ -17,23 +18,12 @@ class Rigidbody2D{
     }
 
     Simulate(){
-        var sprite = this.object.components[0];
         var canvasHeight = document.getElementById("canvas").height;
         
         //change position
-        sprite.position.add(this.acceleration);
+        this.sprite.position.add(this.collider.velocity);
         
         //increase the acceleration
-        this.acceleration.sub(new Vector2(0, -g));
-
-        //coliisions with top and bottom of canvas
-        if (sprite.position.y+sprite.h >= canvasHeight) {
-            this.acceleration.set(0, 0);
-            sprite.position.y = canvasHeight-sprite.h;
-        }
-        else if (sprite.position.y < 0) {
-            this.acceleration.set(0, 0);
-            sprite.position.y = 0;
-        }
+        this.collider.velocity.sub(new Vector2(0, -g));
     }
 }
