@@ -10,24 +10,24 @@ class Object{
 
         this.components = [];
 
-        this.ExecuteStart();
+        this.Start();
     }
 
     AddComponent(component){
         this.components.push(component);
-
-        console.log(this.components);
     }
 
-    ExecuteStart(){
+    Start(){
         DrawRectangle(this.position, this.w, this.h, this.color, this.fill, this.thickness);
 
-        setInterval(this.ExecuteUpdate(), 50); // 50 FPS
+        //setTimeout(this.Update(), 5000) // 50 FPS
     }
 
-    ExecuteUpdate(){
-        for(var i = 0; i < this.components.length; i++){
-            this.components[i].Execute();
-        }
+    Update(){
+        console.log('Update');
+
+        this.components.forEach(component => {
+            component.Execute();
+        });
     }
 }
