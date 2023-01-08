@@ -9,6 +9,7 @@ class Object{
     Awake(){
         this.components.forEach(component => {
             try{
+                component.object = this;
                 component.ExecuteAwake();
             }
             catch{

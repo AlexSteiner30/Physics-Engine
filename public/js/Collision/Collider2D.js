@@ -1,6 +1,5 @@
 class Collider2D{
-    constructor(_obj){
-        this.obj = _obj;
+    constructor(){
     }
 
     ExecuteAwake(){

@@ -1,6 +1,5 @@
 class Rigidbody2D{
     constructor(_object){
-        this.object = _object;
         this.velocity = new Vector2(0, 0);
     };
 

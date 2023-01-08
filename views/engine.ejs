@@ -48,8 +48,8 @@
         var obj = new Object();
 
         obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
-        obj.AddComponent(new Rigidbody2D(obj));
-        obj.AddComponent(new Collider2D(obj));
+        obj.AddComponent(new Rigidbody2D());
+        obj.AddComponent(new Collider2D());
 
         var pos2 = new Vector2(80, 350);
         var obj2 = new Object();
