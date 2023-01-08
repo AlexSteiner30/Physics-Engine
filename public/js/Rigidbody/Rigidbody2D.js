@@ -1,7 +1,6 @@
 class Rigidbody2D extends Object{
     constructor(){
-        this.canvas = document.getElementById("canvas");
-        this.ctx = canvas.getContext("2d");
+        this.ctx = getCanvas();
     };
 
     ExecuteAwake(){
