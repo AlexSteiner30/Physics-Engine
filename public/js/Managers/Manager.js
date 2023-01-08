@@ -1,6 +1,10 @@
 // Variables
 let objects = [];
 
+function reset2() {
+    objects = [];
+}
+
 // Main functions
 function Awake(){ 
     // call the awake function in all the objects

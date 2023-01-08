@@ -24,6 +24,16 @@ class Rigidbody2D{
         this.sprite.position.add(this.velocity);
         
         //increase the acceleration
-        this.velocity.sub(new Vector2(0, -g));
+        this.acceleration.sub(new Vector2(0, -g));
+
+        //coliisions with top and bottom of canvas
+        if (sprite.position.y+sprite.h >= canvasHeight) {
+            this.acceleration.set(0, 0);
+            sprite.position.y = canvasHeight-sprite.h;
+        }
+        else if (sprite.position.y < 0) {
+            this.acceleration.set(0, 0);
+            sprite.position.y = 0;
+        }
     }
 }

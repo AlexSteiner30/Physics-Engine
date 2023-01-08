@@ -33,6 +33,8 @@
 
             <p id="g">g costant:</p>
             <input id="gravity-slider" type="range" min="-100.81" max="100.81" value="9.81">
+            <br>
+            <button onClick="reset()"> Reset</button>
         </div>
 
         <hr>
@@ -41,7 +43,7 @@
 </body>
 
 <script>
-    function Inizialize(){
+    function Initialize(){
         var pos = new Vector2(500, 40);
         var obj = new Object();
 
@@ -57,7 +59,24 @@
         Awake();
     }
 
-    Inizialize();
+    function reset() {
+        console.log("Hello world");
+        reset2();
+        // Set a fake timeout to get the highest timeout id
+        var highestTimeoutId = setTimeout(";");
+        for (var i = 0 ; i < highestTimeoutId ; i++) {
+            clearTimeout(i); 
+        }
+        let ctx = getCanvas();
+        let canvas = document.getElementById("canvas");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        delete(obj);
+        delete(obj2);
+        Initialize();
+        setInterval(UpdateVariables, 1);
+    }
+
+    Initialize();
 
     setInterval(UpdateVariables, 1);
 
