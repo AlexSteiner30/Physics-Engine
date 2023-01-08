@@ -43,7 +43,7 @@ class Vector2{
 
     //sets the vector to be equal to its parameters(a is x coordinate and b is y coordiante). Can also pass a Vector2 as parameter
     set(a, b=null) {
-        if (b!= null) {
+        if (b != null) {
             this.x = a;
             this.y = b;
         }
