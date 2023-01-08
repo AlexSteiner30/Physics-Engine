@@ -55,7 +55,7 @@ class Vector2{
 
     //returns a copy of the vector
     get() {
-        return Vector2(this.x, this.y);
+        return new Vector2(this.x, this.y);
     }
 
     //limits magnitude of the vector

@@ -6,6 +6,7 @@ class Spring {
         this.fullLength = _fullLength;
         this.color = _color;
         this.k = _k;
+        this.semiCircles = 5;
     }
     
     ExecuteAwake() {
@@ -17,6 +18,6 @@ class Spring {
     }
 
     ExecuteUpdate() {
-
+        this.connectedObject.position.limit(this.position.add(new Vector2(this.fullLength, this.fullLength)));
     }
 }

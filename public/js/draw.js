@@ -5,14 +5,16 @@ function getCanvas(canvasId="canvas") {
 }
 
 
-function Draw(sprite, position, w, h, color, fill, thickness){
+function Draw(sprite, position, w, h, color, fill, thickness, obj=null){
     if(sprite === 'rect'){
         DrawRectangle(position, w, h, color, fill, thickness);
     }
     else if(sprite === 'circle'){
         var d = w;
-
-        DrawCircle(position, w, color, fill, thickness);
+        DrawCircle(position, d, color, fill, thickness);
+    }
+    else if(sprite === "spring") {
+        DrawSpring(position, obj, color);
     }
 }
 
@@ -52,6 +54,15 @@ function DrawCircle(position, d, color, fill, thickness){
         ctx.arc(position.x, position.y, d, 0, 2 * Math.PI);
     }
 
+    ctx.stroke();
+}
+
+function DrawSpring(position, connectedObject, color) {
+    //improve drawing later
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.moveTo(position.x, position.y);
+    ctx.lineTo(connectedObject.position.x, connectedObject.position.y);
     ctx.stroke();
 }
 
