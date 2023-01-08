@@ -51,9 +51,10 @@ function DrawCircle(position, d, color, fill, thickness){
     ctx.stroke();
 }
 
-function drawForceArrow(position, vector) {
+function drawForceArrow(position, vector, color) {
     var ctx = getCanvas();
     ctx.beginPath();
+    ctx.strokeStyle = color;
     ctx.moveTo(position.x, position.y);
     ctx.lineTo(vector.x, vector.y);
     ctx.stroke();
