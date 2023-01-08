@@ -11,6 +11,7 @@
     <script  src="js/Rigidbody/Rigidbody2D.js"></script>
     <script src="js/Object/Object.js"></script>
     <script src="js/Manager.js"></script>
+    <script src="js/Renderer/Sprite2D.js"></script>
 
 </head>
 <body>
@@ -25,7 +26,7 @@
     var vec = new Vector2(500, 40);
 
     var obj = new Object(vec, 10, 10, 'red', false, 2);
-    obj.AddComponent(new Rigidbody2D());
+    obj.AddComponent(new Sprite2D(vec));
     obj.Update();
 
 </script>
