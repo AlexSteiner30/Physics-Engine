@@ -23,9 +23,11 @@ class Collider2D{
     DetectCollisions(){
         if (this.sprite.name === 'rect') {
             this.colliders.forEach(collider => {
-                console.log(collider);
-                if(this.sprite.position.x + this.sprite.w >= collider.object.component[0].position.x){
-                    console.log('Colliding with ' + collider.object.sprite.sprite);
+                if(this.sprite.position.y + this.sprite.h >= collider.object.components[0].position.y){
+                    console.log('Colliding with ' + colliders);
+
+                    this.rb.velocity.set(0, 0);
+                    this.sprite.position.y = collider.object.components[0].position.y-this.sprite.h;
                 }
             });
         }
