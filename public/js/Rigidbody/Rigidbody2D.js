@@ -1,11 +1,11 @@
 class Rigidbody2D{
     constructor(_object){
         this.object = _object;
+        this.velocity = new Vector2(0, 0);
     };
 
     ExecuteAwake(){
         // Components
-        this.collider = this.object.GetComponent("Collider2D");
         this.sprite = this.object.GetComponent("Sprite2D");
     }
 
@@ -21,9 +21,9 @@ class Rigidbody2D{
         var canvasHeight = document.getElementById("canvas").height;
         
         //change position
-        this.sprite.position.add(this.collider.velocity);
+        this.sprite.position.add(this.velocity);
         
         //increase the acceleration
-        this.collider.velocity.sub(new Vector2(0, -g));
+        this.velocity.sub(new Vector2(0, -g));
     }
 }
