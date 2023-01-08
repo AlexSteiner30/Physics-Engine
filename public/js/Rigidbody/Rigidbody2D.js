@@ -26,7 +26,7 @@ class Rigidbody2D{
         //increase the acceleration
         this.acceleration.sub(new Vector2(0, -g));
 
-        //coliisions with top and bottom of canvas
+        //coliisions with top and bottom of canvas, only works with rectangle, remove later, it was just annoying to have the rectangle get out of the canvas
         if (sprite.position.y+sprite.h >= canvasHeight) {
             this.acceleration.set(0, 0);
             sprite.position.y = canvasHeight-sprite.h;
