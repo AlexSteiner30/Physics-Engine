@@ -1,5 +1,6 @@
 // Variables
 let objects = [];
+let isSimulating = false;
 
 function reset2() {
     objects = [];
@@ -29,14 +30,16 @@ function Start(){
 }
 
 function Update(){
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
+    if(isSimulating){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    objects.forEach(object => {
-        object.Update();
-    });
+        objects.forEach(object => {
+            object.Update();
+        });
+    }
 }
 
 // Functions

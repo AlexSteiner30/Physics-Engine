@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Engine</title>
 
+    <script src="js/PhysicsEngine.js"></script>
+
     <script src="js/Draw.js"></script>
     <script src="js/Managers/Manager.js"></script>
     <script src="js/Managers/VariableManager.js"></script>
@@ -34,51 +36,13 @@
             <p id="g">g costant:</p>
             <input id="gravity-slider" type="range" min="-100.81" max="100.81" value="9.81">
             <br>
-            <button onClick="reset()"> Reset</button>
         </div>
 
         <hr>
         
+        <button onClick="Reset()">Reset</button>
+        <button onClick="Play()">Play</button>
+        <button onClick="Pause()">Pause</button>
     </div>
 </body>
-
-<script>
-    function Initialize(){
-        var pos = new Vector2(500, 40);
-        var obj = new Object();
-
-        obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
-        obj.AddComponent(new Rigidbody2D());
-        obj.AddComponent(new Collider2D());
-
-        var pos2 = new Vector2(80, 350);
-        var obj2 = new Object();
-
-        obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', true, 2));
-
-        Awake();
-    }
-
-    function reset() {
-        console.log("Hello world");
-        reset2();
-        // Set a fake timeout to get the highest timeout id
-        var highestTimeoutId = setTimeout(";");
-        for (var i = 0 ; i < highestTimeoutId ; i++) {
-            clearTimeout(i); 
-        }
-        let ctx = getCanvas();
-        let canvas = document.getElementById("canvas");
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        delete(obj);
-        delete(obj2);
-        Initialize();
-        setInterval(UpdateVariables, 1);
-    }
-
-    Initialize();
-
-    setInterval(UpdateVariables, 1);
-
-</script>
 </html>
