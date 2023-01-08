@@ -1,4 +1,4 @@
-var g = -9.81;
+var g = 9.81;
 
 function UpdateVariables(){
     
