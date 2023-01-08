@@ -9,8 +9,7 @@ class Rigidbody2D{
 
     ExecuteStart(){
         // Components
-        //this.sprite = this.object.GetComponent("Sprite2D"); // need to fix this
-        this.sprite = this.object.components[0];
+        this.sprite = this.object.GetComponent("Sprite2D");
     }
 
     ExecuteUpdate(){

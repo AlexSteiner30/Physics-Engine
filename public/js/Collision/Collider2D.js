@@ -9,8 +9,7 @@ class Collider2D{
 
     ExecuteStart(){
         // Components
-        //this.sprite = this.object.GetComponent("Sprite2D"); // need to fix this
-        this.sprite = this.object.components[0];
+        this.sprite = this.object.GetComponent("Sprite2D"); 
         this.rb = this.object.GetComponent("Rigidbody2D");
 
         this.GetAllColliders();
@@ -24,10 +23,8 @@ class Collider2D{
         if (this.sprite.name === 'rect') {
             this.colliders.forEach(collider => {
                 if(this.sprite.position.y + this.sprite.h >= collider.object.components[0].position.y){
-                    console.log('Colliding at position ' + collider.object.components[0].position.y);
-
                     this.rb.velocity.set(0, 0);
-                    this.sprite.position.y = collider.object.components[0].position.y-this.sprite.h;
+                    this.sprite.position.y = collider.object.components[0].position.y - this.sprite.h;
                 }
             });
         }

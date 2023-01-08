@@ -50,13 +50,15 @@ class Object{
     }
 
     GetComponent(component){
+        var comp;
+
         this.components.forEach(x =>{
             if(x.constructor.name === component){
-                return(component);
+                comp = x;
             }
         });
 
-        return false;
+        return comp;
     }
 
     GetAllComponents(){
