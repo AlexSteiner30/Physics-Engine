@@ -27,17 +27,12 @@ class Collider2D{
 
                 var rect2Y = collider.object.GetComponent("Sprite2D").position.y;
                 var rect2H = collider.object.GetComponent("Sprite2D").h;
-                //console.log(this.rb.velocity.y);
-              
-                if (rect1Y < rect2Y + rect2H && rect1H + rect1Y > rect2Y && this.rb.velocity.y >= 0) {
-                    console.log('colliding');
-                    this.rb.velocity.y = 0;
       
-
+                if (rect1Y < rect2Y + rect2H && rect1H + rect1Y > rect2Y && this.rb.velocity.y >= 0) {
+                    this.rb.velocity.y = 0;
                     this.sprite.position.y = collider.object.GetComponent("Sprite2D").position.y - this.sprite.h;
                 }
                 else if (rect1Y <= rect2Y + rect2H && rect1Y >= rect2Y && this.rb.velocity.y <= 0) {
-                    console.log("colliding with the top");
                     this.rb.velocity.y = 0;
                     this.sprite.position.y = rect2Y+rect2H;
                 }

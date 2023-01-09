@@ -2,6 +2,8 @@
 let objects = [];
 let isSimulating = false;
 
+let collisions = [];
+
 // Main functions
 function Awake(){ 
     // call the awake function in all the objects
@@ -19,9 +21,13 @@ function Start(){
     // then call Update
     
     objects.forEach(object => {
+        if(object.GetComponent("Collider2D")){
+            collisions.push(object);
+        }
         object.Start();
     });
 
+    setTimeout(FixedUpdate, 1/100);
     setInterval(Update, 30);
 }
 
@@ -37,6 +43,15 @@ function Update(){
         });
     }
 }
+
+function FixedUpdate(){
+    if(isSimulating){
+        collisions.forEach(object => {
+            object.Update();
+        });
+    }
+}
+
 
 // Functions
 function AddObject(object){
