@@ -1,6 +1,6 @@
 //default values of the control panel variables
 const DEFAULTS = {
-    g: 9.81
+    g: 0.81 //9.81 change later
 };
 
 function Initialize(){
