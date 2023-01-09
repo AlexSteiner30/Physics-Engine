@@ -1,7 +1,7 @@
 function Initialize(){
     isSimulating = true;
     
-    var pos = new Vector2(500,50);
+    var pos = new Vector2(500,200);
     var obj = new Object();
 
     obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
