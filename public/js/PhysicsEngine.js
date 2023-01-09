@@ -12,21 +12,18 @@ function Initialize(){
     var obj2 = new Object();
 
     obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', true, 2));
-    obj2.AddComponent(new Rigidbody2D());
 
     var pos3 = new Vector2(200, 500);
     var obj3 = new Object();
 
     obj3.AddComponent(new Sprite2D('rect', pos3, 600, 10, 'black', true, 2));
     obj3.AddComponent(new Collider2D());
-    obj3.AddComponent(new Rigidbody2D(false));
 
     var pos4 = new Vector2(200, 300);
     var obj4 = new Object();
 
     obj4.AddComponent(new Sprite2D('rect', pos4, 600, 10, 'black', true, 2));
     obj4.AddComponent(new Collider2D());
-    obj4.AddComponent(new Rigidbody2D(false));
 
     Awake();
 }
