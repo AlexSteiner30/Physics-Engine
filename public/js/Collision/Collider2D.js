@@ -26,7 +26,7 @@ class Collider2D{
                     this.rb.velocity.set(0, 0);
                     this.sprite.position.y = collider.object.GetComponent("Sprite2D").position.y - this.sprite.h;
                 }
-                if (this.sprite.position.y >= collider.object.GetComponent("Sprite2D").position.y + collider.object.GetComponent("Sprite2D").h) {
+                if (this.sprite.position.y <= collider.object.GetComponent("Sprite2D").position.y + collider.object.GetComponent("Sprite2D").h && this.object.GetComponent("RigidBody2D").velocity.y <= 0) {
                     this.rb.velocity.set(0, 0);
                     this.sprite.position.y = collider.object.GetComponent("Sprite2D").position.y - this.sprite.h;        
                 }
