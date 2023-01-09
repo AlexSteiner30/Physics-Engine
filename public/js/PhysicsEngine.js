@@ -1,12 +1,12 @@
 //default values of the control panel variables
 const DEFAULTS = {
-    g: 0.81 //9.81 change later
+    g: -0.81 //9.81 change later
 };
 
 function Initialize(){
     isSimulating = true;
     
-    var pos = new Vector2(500,100);
+    var pos = new Vector2(500,200);
     var obj = new Object();
 
     obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
@@ -24,7 +24,7 @@ function Initialize(){
     obj3.AddComponent(new Sprite2D('rect', pos3, 600, 10, 'black', true, 2));
     obj3.AddComponent(new Collider2D());
 
-    var pos4 = new Vector2(200, 20);
+    var pos4 = new Vector2(200, 0);
     var obj4 = new Object();
 
     obj4.AddComponent(new Sprite2D('rect', pos4, 600, 10, 'black', true, 2));

@@ -20,15 +20,20 @@ class Collider2D{
     }
 
     DetectCollisions(){
-        if (this.sprite.name === 'rect') {
+        if(this.sprite.name === 'rect') {
             this.colliders.forEach(collider => {
-                if (this.sprite.position.y + this.sprite.h >= collider.object.GetComponent("Sprite2D").position.y) {
+                var rect1Y = this.sprite.position.y;
+                var rect1H = this.sprite.h;
+
+                var rect2Y = collider.object.GetComponent("Sprite2D").position.y;
+                var rect2H = collider.object.GetComponent("Sprite2D").h;
+              
+                if (rect1Y < rect2Y + rect2H && rect1H + rect1Y > rect2Y) {
+                    console.log('colliding');
                     this.rb.velocity.set(0, 0);
+      
+
                     this.sprite.position.y = collider.object.GetComponent("Sprite2D").position.y - this.sprite.h;
-                }
-                if (this.sprite.position.y <= collider.object.GetComponent("Sprite2D").position.y + collider.object.GetComponent("Sprite2D").h && this.object.GetComponent("RigidBody2D").velocity.y <= 0) {
-                    this.rb.velocity.set(0, 0);
-                    this.sprite.position.y = collider.object.GetComponent("Sprite2D").position.y - this.sprite.h;        
                 }
             });
         }
@@ -38,7 +43,7 @@ class Collider2D{
         GetAllObjects().forEach(obj =>{ 
             if(this.object != obj){
                 obj.components.forEach(comp =>{
-                    if(comp.constructor.name === 'Collider2D'){
+                    if(comp.constructor.name === 'Collider2D'){ 
                         this.colliders.push(comp);
                     }
                 });
