@@ -23,8 +23,8 @@ function Initialize(){
 }
 
 function Play(){
-    Initialize();
-
+    isSimulating = true;
+    
     setInterval(UpdateVariables, 1);
 }
 
