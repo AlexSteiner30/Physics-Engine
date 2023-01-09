@@ -26,12 +26,11 @@ class Collider2D{
                     this.rb.velocity.set(0, 0);
                     this.sprite.position.y = collider.object.components[0].position.y - this.sprite.h;
                 }
-                if (this.sprite.position.y <= collider.object.components[0].position.y + collider.object.componenents[0].h) {
+                if (this.sprite.position.y >= collider.object.components[0].position.y + collider.object.componenents[0].h) {
+                    if(this.rb != null)
                     this.rb.velocity.set(0, 0);
-                    this.sprite.position.y = collider.object.components[0].position.y + collider.object.components[0].h;        
+                    this.sprite.position.y = collider.object.components[0].position.y - this.sprite.h;        
                 }
-
-                console.log(this.sprite.position.y <= collider.object.components[0].position.y + collider.object.componenents[0].h);
             });
         }
     }
