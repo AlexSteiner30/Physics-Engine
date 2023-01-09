@@ -1,4 +1,4 @@
-var g = 9.81;
+var g = DEFAULTS.g;
 
 function UpdateVariables(){
     

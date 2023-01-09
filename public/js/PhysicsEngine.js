@@ -1,3 +1,8 @@
+//default values of the control panel variables
+const DEFAULTS = {
+    g: 9.81
+};
+
 function Initialize(){
     isSimulating = true;
     
@@ -62,5 +67,5 @@ function Reset() {
 }
 
 function Default() {
-    g = document.getElementById('gravity-slider').value = 9.81;
+    g = document.getElementById('gravity-slider').value = DEFAULTS.g;
 }
