@@ -1,6 +1,6 @@
 //default values of the control panel variables
 const DEFAULTS = {
-    g: 0.81 //9.81 change later
+    g: -9.81 
 };
 
 function Initialize(){
@@ -10,7 +10,7 @@ function Initialize(){
     var obj = new Object();
 
     obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
-    obj.AddComponent(new Rigidbody2D());
+    obj.AddComponent(new Rigidbody2D(100));
     obj.AddComponent(new Collider2D());
 
     var pos2 = new Vector2(80, 350);
