@@ -54,3 +54,7 @@ function UpdateObject(object, newObject){
 function GetComponent(component){
     return component;
 }
+
+function GetAllObjects(){
+    return objects;
+}

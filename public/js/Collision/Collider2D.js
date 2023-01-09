@@ -27,7 +27,6 @@ class Collider2D{
                     this.sprite.position.y = collider.object.components[0].position.y - this.sprite.h;
                 }
                 if (this.sprite.position.y >= collider.object.components[0].position.y + collider.object.componenents[0].h) {
-                    if(this.rb != null)
                     this.rb.velocity.set(0, 0);
                     this.sprite.position.y = collider.object.components[0].position.y - this.sprite.h;        
                 }
@@ -36,14 +35,14 @@ class Collider2D{
     }
 
     GetAllColliders(){
-        objects.forEach(object => {
-            if(object != this.object){
-                object.GetAllComponents().forEach(component =>{ 
-                    if(component.constructor.name === 'Collider2D'){
-                        this.colliders.push(component);
+        GetAllObjects().forEach(obj =>{ 
+            if(this.object != obj)
+                obj.components.forEach(comp =>{
+                    if(comp.constructor.name === 'Collider2D'){
+                        this.colliders.push(comp);
+                        console.log(comp.constructor.name);
                     }
                 });
-            }
         });
     }
 }
