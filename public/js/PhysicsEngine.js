@@ -22,7 +22,7 @@ function Initialize(){
     var pos4 = new Vector2(200, 300);
     var obj4 = new Object();
 
-    obj4.AddComponent(new Sprite2D('rect', pos4, 600, 10, 'black', true, 2));
+    obj4.AddComponent(new Sprite2D('rect', pos4, 600, 50, 'black', true, 2));
     obj4.AddComponent(new Collider2D());
 
     Awake();
@@ -59,4 +59,8 @@ function Reset() {
 
     Initialize();
     setInterval(UpdateVariables, 1);
+}
+
+function Default() {
+    g = document.getElementById('gravity-slider').value = 9.81;
 }
