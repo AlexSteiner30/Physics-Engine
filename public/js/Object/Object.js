@@ -60,14 +60,4 @@ class Object{
 
         return comp;
     }
-
-    GetAllComponents(){
-        var allComponents = [];
-
-        this.components.forEach(x =>{
-            allComponents.push(x);
-        });
-
-        return allComponents;
-    }
 }
