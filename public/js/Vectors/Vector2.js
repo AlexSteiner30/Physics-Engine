@@ -13,8 +13,12 @@ class Vector2{
         return this.x * this.x + this.y * this.y;
     }
 
+    magnitued(){
+        return sqrt((this.x * this.x) + (this.y * this.y));
+    }
+
     normalized(){
-        return this * (1 / length(this))
+        return (Vector2( (this.x / this.magnituede()),  (this.y / this.magnituede()) ));
     }
 
     //add a Vector2 to another one

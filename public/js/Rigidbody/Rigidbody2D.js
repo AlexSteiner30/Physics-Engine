@@ -45,7 +45,7 @@ class Rigidbody2D{
     }
 
     AddForce(force){
-        var tempForce = force;
+        var tempForce = force.get();
         tempForce.div(this.mass);
         this.acceleration.add(tempForce);
     }
