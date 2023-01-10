@@ -66,10 +66,6 @@ function UpdateObject(object, newObject){
     objects.find(object) = newObject;
 }
 
-function GetComponent(component){
-    return component;
-}
-
 function GetAllObjects(){
     return objects;
 }
