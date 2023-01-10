@@ -24,16 +24,13 @@ class Rigidbody2D{
 
     Simulate(){ 
        if(this.useGravity){
-            this.Gravity();
-            this.AddForce(new Vector2(.1, 0));
-            this.AddForce(new Vector2(.1, 0));
+           //gravity
+           this.AddForce(new Vector2(0, g));
+           this.ApplyForces();
        }
     }
 
-    Gravity(){
-        //increase the acceleration
-        this.AddForce(new Vector2(0, -g));
-
+    ApplyForces(){
         //add to the velocity
         this.velocity.add(this.acceleration);
 

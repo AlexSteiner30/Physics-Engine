@@ -6,7 +6,7 @@ const DEFAULTS = {
 function Initialize(){
     isSimulating = true;
     
-    var pos = new Vector2(500, 200);
+    var pos = new Vector2(120, 100);
     var obj = new Object();
 
     obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
@@ -24,10 +24,10 @@ function Initialize(){
     obj3.AddComponent(new Sprite2D('rect', pos3, 600, 10, 'black', true, 2));
     obj3.AddComponent(new Collider2D());
 
-    var pos4 = new Vector2(200, 100);
+    var pos4 = new Vector2(400, 100);
     var obj4 = new Object();
 
-    obj4.AddComponent(new Sprite2D('rect', pos4, 600, 40, 'black', true, 2));
+    obj4.AddComponent(new Sprite2D('rect', pos4, 200, 40, 'black', true, 2));
     obj4.AddComponent(new Collider2D());
 
     Awake();

@@ -18,7 +18,7 @@ class Vector2{
     }
 
     normalized(){
-        return (Vector2( (this.x / this.magnituede()),  (this.y / this.magnituede()) ));
+        return (Vector2( (this.x / this.magnitued()),  (this.y / this.magnitued()) ));
     }
 
     //add a Vector2 to another one
