@@ -34,7 +34,7 @@ class Collider2D{
                 var rect2X = collider.object.GetComponent("Sprite2D").position.x;
                 var rect2W = collider.object.GetComponent("Sprite2D").w;
       
-                if (rect1Y < rect2Y + rect2H && rect1H + rect1Y > rect2Y && this.rb.velocity.y > 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
+                if (rect1Y + rect1H < rect2Y + rect2H && rect1H + rect1Y >= rect2Y && this.rb.velocity.y > 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
                     this.rb.velocity.y = 0;
                     this.sprite.position.y = collider.object.GetComponent("Sprite2D").position.y - this.sprite.h;
                 }

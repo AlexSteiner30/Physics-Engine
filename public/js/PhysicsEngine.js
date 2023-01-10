@@ -1,6 +1,6 @@
 //default values of the control panel variables
 const DEFAULTS = {
-    g: 9.81 
+    g: 0.81
 };
 
 function Initialize(){
@@ -48,7 +48,7 @@ function Reset() {
     var highestTimeoutId = setTimeout(";");
 
     for (var i = 0 ; i < highestTimeoutId ; i++) {
-        clearTimeout(i); 
+        clearTimeout(i);
     }
 
     let ctx = getCanvas();
