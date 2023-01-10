@@ -26,8 +26,8 @@ class Rigidbody2D{
        if(this.useGravity){
            //gravity
            this.AddForce(new Vector2(0, g));
-           this.ApplyForces();
-       }
+        }
+        this.ApplyForces();
     }
 
     ApplyForces(){
