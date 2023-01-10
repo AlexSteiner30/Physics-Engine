@@ -18,10 +18,11 @@
     <script src="js/Collision/Collider2D.js"></script>
     <script src="js/Renderer/Sprite2D.js"></script>
     <script src="js/Spring/Spring.js"></script>
+    <script src="js/Draggable/Draggable.js"></script>
 
 </head>
 <body style="background-color: gray;">
-    <canvas id="canvas" width="1024" height="512" style="border:1px solid #000000;">
+    <canvas onclick="clicked()" onmousemove="mouseCoordinates(event)" id="canvas" width="1024" height="512" style="border:1px solid #000000;">
         Browser doens't support the canvas element.
     </canvas>
 

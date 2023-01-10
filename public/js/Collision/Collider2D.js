@@ -9,7 +9,7 @@ class Collider2D{
 
     ExecuteStart(){
         // Components
-        this.sprite = this.object.GetComponent("Sprite2D"); 
+        this.sprite = this.object.GetComponent("Sprite2D");
         this.rb = this.object.GetComponent("Rigidbody2D");
 
         this.GetAllColliders();

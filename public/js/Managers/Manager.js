@@ -4,6 +4,9 @@ let isSimulating = false;
 
 let collisions = [];
 
+var mouseX = 0;
+var mouseY = 0;
+
 // Main functions
 function Awake(){ 
     // call the awake function in all the objects
@@ -68,4 +71,20 @@ function UpdateObject(object, newObject){
 
 function GetAllObjects(){
     return objects;
+}
+
+function mouseCoordinates(event) {
+    var rect = document.getElementById("canvas").getBoundingClientRect();
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
+}
+
+function clicked() {
+    GetAllObjects().forEach(obj =>{ 
+        obj.components.forEach(comp =>{
+            if(comp.constructor.name === 'Draggable'){ 
+                comp.Check();
+            }
+        });
+    });
 }

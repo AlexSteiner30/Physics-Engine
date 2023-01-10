@@ -6,7 +6,7 @@ class Rigidbody2D{
         this.useGravity = _useGravity;
         this.mass = _mass;
 
-        this.force = new Vector2(1, 0);
+        this.mouseDragging = false;
     };
 
     ExecuteAwake(){
@@ -22,12 +22,16 @@ class Rigidbody2D{
         this.Simulate();
     }
 
-    Simulate(){ 
-       if(this.useGravity){
-           //gravity
-           this.Gravity()
+    Simulate(){
+        if (!this.mouseDragging) {
+            if(this.useGravity) {
+                this.Gravity()
+            }
+            this.ApplyForces();
         }
-        this.ApplyForces();
+        else {
+            this.sprite.position.set(mouseX-this.sprite.w/2, mouseY-this.sprite.h/2);
+        }
     }
 
     Gravity() {

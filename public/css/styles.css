@@ -49,7 +49,3 @@ main {
 #everything {
     min-height: 85vh;
 }
-
-#screen {
-    visibility: hidden;
-}

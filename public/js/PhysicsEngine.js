@@ -1,17 +1,18 @@
 //default values of the control panel variables
 const DEFAULTS = {
-    g: 0.81
+    g: 9.81
 };
 
 function Initialize(){
     isSimulating = true;
     
-    var pos = new Vector2(120, 100);
+    var pos = new Vector2(462, 100);
     var obj = new Object();
 
     obj.AddComponent(new Sprite2D('rect', pos, 100, 100, 'red', true, 2));
     obj.AddComponent(new Rigidbody2D(100));
     obj.AddComponent(new Collider2D());
+    obj.AddComponent(new Draggable());
 
     var pos2 = new Vector2(80, 350);
     var obj2 = new Object();
@@ -24,10 +25,10 @@ function Initialize(){
     obj3.AddComponent(new Sprite2D('rect', pos3, 600, 10, 'black', true, 2));
     obj3.AddComponent(new Collider2D());
 
-    var pos4 = new Vector2(400, 100);
+    var pos4 = new Vector2(362, -30);
     var obj4 = new Object();
 
-    obj4.AddComponent(new Sprite2D('rect', pos4, 200, 40, 'black', true, 2));
+    obj4.AddComponent(new Sprite2D('rect', pos4, 300, 40, 'black', true, 2));
     obj4.AddComponent(new Collider2D());
 
     Awake();
@@ -57,7 +58,7 @@ function Reset() {
 
     // clean all the objects
     objects.forEach(element => {
-        delete(objects);
+        delete(element);
     });
 
     objects = [];
