@@ -57,6 +57,6 @@ class Rigidbody2D{
         tempForce.div(this.mass);
         this.acceleration.add(tempForce);
               
-        DrawForceArrow(this.sprite.position, this.velocity.get().add(this.sprite.position), 'black');
+        DrawForceArrow(this.sprite.position, this.velocity.get().add(this.sprite.position), this.sprite.w, 'black');
     }
 }
