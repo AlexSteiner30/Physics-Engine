@@ -25,6 +25,8 @@ class Vector2{
     add(vector) {
         this.x += vector.x;
         this.y += vector.y;
+
+        return this;
     }
 
     //substracts a Vector2 from another one

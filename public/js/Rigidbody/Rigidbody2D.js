@@ -27,6 +27,7 @@ class Rigidbody2D{
             if(this.useGravity) {
                 this.Gravity()
             }
+
             this.ApplyForces();
         }
         else {
@@ -49,17 +50,13 @@ class Rigidbody2D{
 
         //change position
         this.sprite.position.add(this.velocity);
-
-        var temp = this.sprite.position.get();
-        //console.log(temp);
-
-        console.log(this.sprite.position.x+" "+this.sprite.position.y+" "+this.sprite.position.get().add(this.velocity)+" "+temp.add(this.velocity));
-        DrawForceArrow(this.sprite.position, this.velocity.get().add(this.sprite.position), 'black');
     }
 
     AddForce(force){
         var tempForce = force.get();
         tempForce.div(this.mass);
         this.acceleration.add(tempForce);
+              
+        DrawForceArrow(this.sprite.position, this.velocity.get().add(this.sprite.position), 'black');
     }
 }
