@@ -73,8 +73,8 @@ function DrawForceArrow(position, vector, w, color) {
     ctx.lineWidth = 5;
     ctx.strokeStyle = color;
 
-    ctx.moveTo(position.x + (w/2), position.y - 100);
-    ctx.lineTo(vector.x +(w/2), vector.y);
+    ctx.moveTo(position.x, position.y - 100);
+    ctx.lineTo(vector.x, vector.y);
 
     ctx.stroke();
 }
