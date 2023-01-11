@@ -31,6 +31,8 @@ class Rigidbody2D{
         }
         else {
             this.sprite.position.set(mouseX-this.sprite.w/2, mouseY-this.sprite.h/2);
+            this.acceleration.mult(0);
+            this.velocity.mult(0);
         }
     }
 
@@ -47,6 +49,12 @@ class Rigidbody2D{
 
         //change position
         this.sprite.position.add(this.velocity);
+
+        var temp = this.sprite.position.get();
+        //console.log(temp);
+
+        console.log(this.sprite.position.x+" "+this.sprite.position.y+" "+this.sprite.position.get().add(this.velocity)+" "+temp.add(this.velocity));
+        DrawForceArrow(this.sprite.position, this.velocity.get().add(this.sprite.position), 'black');
     }
 
     AddForce(force){

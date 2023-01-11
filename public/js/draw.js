@@ -66,7 +66,8 @@ function DrawSpring(position, connectedObject, color) {
     ctx.stroke();
 }
 
-function drawForceArrow(position, vector, color) {
+function DrawForceArrow(position, vector, color) {
+    console.log("Drawing the force arrow from "+position.x+" "+position.y+" to "+vector.x+" "+vector.y);
     var ctx = getCanvas();
     ctx.beginPath();
     ctx.strokeStyle = color;
