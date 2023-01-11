@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Engine</title>
 
+    <link rel="stylesheet" href="/css/engine.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
     <script src="js/PhysicsEngine.js"></script>
 
     <script src="js/Draw.js"></script>
@@ -22,9 +25,16 @@
 
 </head>
 <body style="background-color: gray;">
-    <canvas onclick="clicked()" onmousemove="mouseCoordinates(event)" id="canvas" width="1024" height="512" style="border:1px solid #000000;">
-        Browser doens't support the canvas element.
-    </canvas>
+    <div class="engine">
+        <canvas onclick="clicked()" onmousemove="mouseCoordinates(event)" id="canvas" width="1024" height="512" style="border:1px solid #000000;">
+            Browser doens't support the canvas element.
+        </canvas>
+    </div>
+
+
+    <div class="inspector">
+        <h1>Inspector</h1>
+    </div>
 
     <div class="control-panel">
 
@@ -45,9 +55,8 @@
         <button onClick="Play()">Play</button>
         <button onClick="Pause()">Pause</button>
         <button onClick="Default()">Default</button>
+        <button onClick="Default()">Default</button>
     </div>
-
- 
 
     <script>
         Default();

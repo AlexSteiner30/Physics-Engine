@@ -73,12 +73,6 @@ function GetAllObjects(){
     return objects;
 }
 
-function mouseCoordinates(event) {
-    var rect = document.getElementById("canvas").getBoundingClientRect();
-    mouseX = event.clientX - rect.left;
-    mouseY = event.clientY - rect.top;
-}
-
 function clicked() {
     GetAllObjects().forEach(obj =>{ 
         obj.components.forEach(comp =>{
