@@ -67,11 +67,14 @@ function DrawSpring(position, connectedObject, color) {
 }
 
 function DrawForceArrow(position, vector, color) {
-    console.log("Drawing the force arrow from "+position.x+" "+position.y+" to "+vector.x+" "+vector.y);
     var ctx = getCanvas();
     ctx.beginPath();
+
+    ctx.lineWidth = 5;
     ctx.strokeStyle = color;
-    ctx.moveTo(position.x, position.y);
+
+    ctx.moveTo(position.x, position.y - 100);
     ctx.lineTo(vector.x, vector.y);
+
     ctx.stroke();
 }
