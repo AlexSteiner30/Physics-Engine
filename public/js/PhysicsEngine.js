@@ -19,7 +19,6 @@ function Initialize(){
     var obj2 = new Object();
 
     obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', true, 2));
-    obj.AddComponent(new Rigidbody2D(100));
 
     var pos3 = new Vector2(200, 500);
     var obj3 = new Object();

@@ -56,10 +56,7 @@ class Rigidbody2D{
         var tempForce = force.get();
         tempForce.div(this.mass);
         this.acceleration.add(tempForce);
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
+        
         if (document.getElementById("force-arrows").checked) DrawForceArrow(this.sprite.position, this.velocity.get().mult(10), this.sprite.w, this.sprite.h, 'black');
     }
 }

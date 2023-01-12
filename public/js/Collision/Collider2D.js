@@ -13,6 +13,7 @@ class Collider2D{
         this.rb = this.object.GetComponent("Rigidbody2D");
 
         this.GetAllColliders();
+
     }
 
     ExecuteUpdate(){
@@ -36,48 +37,35 @@ class Collider2D{
       
                 // Collision Bottom
                 if (rect1Y + rect1H <= rect2Y + rect2H && rect1H + rect1Y >= rect2Y && this.rb.velocity.y > 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
-                    this.rb.AddForce(new Vector2(0, -10));
-
-                    //this.rb.velocity.y = 0;
                     this.sprite.position.y = rect2Y - this.sprite.h;
+                    this.rb.AddForce(new Vector2(0, (this.rb.velocity.y * -dynamicFriction)));
 
                     console.log('bottom');
                 }
 
-                // Collision Bottom
+                // Collision Top
                 else if (rect1Y <= rect2Y + rect2H && rect1Y >= rect2Y && this.rb.velocity.y < 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
-                    this.rb.velocity.y = 0;
                     this.sprite.position.y = rect2Y+rect2H;
 
-                    this.rb.AddForce(new Vector2(0, -1));
+                    this.sprite.position.y = rect2Y - this.sprite.h;
+                    this.rb.AddForce(new Vector2(0, (this.rb.velocity.y * dynamicFriction)));
 
                     console.log('top');
                 }
-<<<<<<< Updated upstream
-                else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
-=======
 
-                // Collision Left
+                // Collision Right
                 else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
->>>>>>> Stashed changes
-                    this.rb.velocity.x = 0;
-                    this.sprite.position.x = rect2X + rect2W;
-
-                    this.rb.AddForce(new Vector2(1, 0));
+                    this.sprite.position.y = rect2Y - this.sprite.h;
+                    this.rb.AddForce(new Vector2((this.rb.velocity.x * dynamicFriction), 0));
 
                     console.log('right');
                 }
-<<<<<<< Updated upstream
-                else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
-=======
 
-                // Collision Right
+                // Collision Left
                 else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
->>>>>>> Stashed changes
-                    this.rb.velocity.x = 0;
-                    this.sprite.position.x = rect2X - rect1W;
+                    this.sprite.position.y = rect2Y - this.sprite.h;
+                    this.rb.AddForce(new Vector2(-(this.rb.velocity.x * dynamicFriction), 0));
 
-                    this.rb.AddForce(new Vector2(-1, 0));
 
                     console.log('left');
                 }

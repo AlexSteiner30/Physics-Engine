@@ -1,4 +1,5 @@
 var g = DEFAULTS.g;
+const dynamicFriction = 150;
 
 function UpdateVariables(){
     g = document.getElementById('gravity-slider').value;
