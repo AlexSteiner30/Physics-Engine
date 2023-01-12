@@ -66,15 +66,16 @@ function DrawSpring(position, connectedObject, color) {
     ctx.stroke();
 }
 
-function DrawForceArrow(position, vector, w, color) {
+function DrawForceArrow(position, vector, w, h, color) {
     var ctx = getCanvas();
     ctx.beginPath();
 
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 3;
     ctx.strokeStyle = color;
 
-    ctx.moveTo(position.x + (w/2), position.y - 100);
-    ctx.lineTo(vector.x +(w/2), vector.y);
+    ctx.moveTo(position.x + (w/2), position.y + (h/2));
+    console.log(vector.x+" "+position.x);
+    ctx.lineTo(position.x + vector.x + (w/2), position.y + vector.y + (h/2));
 
     ctx.stroke();
 }

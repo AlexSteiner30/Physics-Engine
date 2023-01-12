@@ -39,6 +39,8 @@ class Vector2{
     mult(num) {
         this.x *= num;
         this.y *= num;
+        
+        return this;
     }
 
     //divides both x and y by a certain number

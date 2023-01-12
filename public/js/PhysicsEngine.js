@@ -1,6 +1,7 @@
 //default values of the control panel variables
 const DEFAULTS = {
-    g: 9.81
+    g: 9.81,
+    useForceArrows: false
 };
 
 function Initialize(){
@@ -69,4 +70,5 @@ function Reset() {
 
 function Default() {
     g = document.getElementById('gravity-slider').value = DEFAULTS.g;
+    document.getElementById("force-arrows").value = useForceArrows;
 }
