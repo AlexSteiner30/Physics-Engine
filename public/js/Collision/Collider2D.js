@@ -44,7 +44,7 @@ class Collider2D{
                 }
 
                 // Collision Top
-                else if (rect1Y <= rect2Y + rect2H && rect1Y >= rect2Y && this.rb.velocity.y < 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
+                if (rect1Y <= rect2Y + rect2H && rect1Y >= rect2Y && this.rb.velocity.y < 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
                     this.sprite.position.y = rect2Y+rect2H;
 
                     this.sprite.position.y = rect2Y - this.sprite.h;
@@ -54,7 +54,7 @@ class Collider2D{
                 }
 
                 // Collision Right
-                else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
+                if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
                     this.sprite.position.y = rect2Y - this.sprite.h;
                     this.rb.AddForce(new Vector2((this.rb.velocity.x * dynamicFriction), 0));
 
@@ -62,7 +62,7 @@ class Collider2D{
                 }
 
                 // Collision Left
-                else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
+                if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
                     this.sprite.position.y = rect2Y - this.sprite.h;
                     this.rb.AddForce(new Vector2(-(this.rb.velocity.x * dynamicFriction), 0));
 

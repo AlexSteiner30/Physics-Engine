@@ -15,6 +15,14 @@ function Initialize(){
     obj.AddComponent(new Collider2D());
     obj.AddComponent(new Draggable());
 
+    var pos_ = new Vector2(462, 250);
+    var obj_ = new Object();
+
+    obj_.AddComponent(new Sprite2D('rect', pos_, 100, 100, 'red', true, 2));
+    obj_.AddComponent(new Rigidbody2D(100));
+    obj_.AddComponent(new Collider2D());
+    obj_.AddComponent(new Draggable());
+
     var pos2 = new Vector2(80, 350);
     var obj2 = new Object();
 
