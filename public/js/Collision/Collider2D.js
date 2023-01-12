@@ -53,10 +53,13 @@ class Collider2D{
 
                     console.log('top');
                 }
+<<<<<<< Updated upstream
+                else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
+=======
 
                 // Collision Left
                 else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
-
+>>>>>>> Stashed changes
                     this.rb.velocity.x = 0;
                     this.sprite.position.x = rect2X + rect2W;
 
@@ -64,9 +67,13 @@ class Collider2D{
 
                     console.log('right');
                 }
+<<<<<<< Updated upstream
+                else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
+=======
 
                 // Collision Right
                 else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
+>>>>>>> Stashed changes
                     this.rb.velocity.x = 0;
                     this.sprite.position.x = rect2X - rect1W;
 

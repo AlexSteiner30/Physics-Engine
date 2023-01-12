@@ -1,4 +1,4 @@
-class Raycast{
+class Vector2{
 
     constructor(startingVector, directionVector, length, color){
         this.startingVector = startingVector;
