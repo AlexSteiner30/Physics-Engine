@@ -1,23 +1,13 @@
-class Collider2D{
-    constructor(){
-        this.colliders = [];
-    }
+class Vector2{
 
-    ExecuteAwake(){
-       
-    }
-
-    ExecuteStart(){
-        // Components
-        this.sprite = this.object.GetComponent("Sprite2D");
-        this.rb = this.object.GetComponent("Rigidbody2D");
-
-        this.GetAllColliders();
-    }
-
-    ExecuteUpdate(){
-        this.DetectCollisions();
-    }
+    constructor(startingVector, directionVector, length, color){
+        this.startingVector = startingVector;
+        this.directionVector = directionVector;
+        this.length = length;
+        this.color = color;
+        
+        this.DrawRayCast();
+    };
 
     DetectCollisions(){
         if(this.sprite.name === 'rect') {
@@ -34,52 +24,21 @@ class Collider2D{
                 var rect2X = collider.object.GetComponent("Sprite2D").position.x;
                 var rect2W = collider.object.GetComponent("Sprite2D").w;
       
-                // Collision Bottom
                 if (rect1Y + rect1H <= rect2Y + rect2H && rect1H + rect1Y >= rect2Y && this.rb.velocity.y > 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
-                    this.rb.AddForce(new Vector2(0, -10));
-
-                    //this.rb.velocity.y = 0;
+                    this.rb.velocity.y = 0;
                     this.sprite.position.y = rect2Y - this.sprite.h;
-
-                    console.log('bottom');
                 }
-
-                // Collision Bottom
                 else if (rect1Y <= rect2Y + rect2H && rect1Y >= rect2Y && this.rb.velocity.y < 0 && rect1X + rect1W >= rect2X && rect1X <= rect2X + rect2W) {
                     this.rb.velocity.y = 0;
                     this.sprite.position.y = rect2Y+rect2H;
-
-                    this.rb.AddForce(new Vector2(0, -1));
-
-                    console.log('top');
                 }
-<<<<<<< Updated upstream
-                else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
-=======
-
-                // Collision Left
                 else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
->>>>>>> Stashed changes
                     this.rb.velocity.x = 0;
                     this.sprite.position.x = rect2X + rect2W;
-
-                    this.rb.AddForce(new Vector2(1, 0));
-
-                    console.log('right');
                 }
-<<<<<<< Updated upstream
-                else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
-=======
-
-                // Collision Right
                 else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
->>>>>>> Stashed changes
                     this.rb.velocity.x = 0;
                     this.sprite.position.x = rect2X - rect1W;
-
-                    this.rb.AddForce(new Vector2(-1, 0));
-
-                    console.log('left');
                 }
             });
         }
@@ -96,5 +55,12 @@ class Collider2D{
             }
         });
 
+    }
+    DrawRayCast(){
+        DrawArrow(this.startingVector, new Vector2(this.directionVector.x, this.directionVector.y * this.length), this.color);
+
+        if(this.directionVector.x){
+
+        }
     }
 }

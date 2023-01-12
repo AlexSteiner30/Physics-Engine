@@ -78,3 +78,16 @@ function DrawForceArrow(position, vector, w, h, color) {
 
     ctx.stroke();
 }
+
+function DrawArrow(position, end, color) {
+    var ctx = getCanvas();
+    ctx.beginPath();
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = color;
+
+    ctx.moveTo(position.x, position.y);
+    ctx.lineTo(position.x + end.x , position.y + end.y);
+
+    ctx.stroke();
+}
