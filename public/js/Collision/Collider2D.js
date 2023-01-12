@@ -42,11 +42,11 @@ class Collider2D{
                     this.rb.velocity.y = 0;
                     this.sprite.position.y = rect2Y+rect2H;
                 }
-                else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
+                else if (rect1X <= rect2X + rect2W && rect1X >= rect2X && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
                     this.rb.velocity.x = 0;
                     this.sprite.position.x = rect2X + rect2W;
                 }
-                else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y+rect1H >= rect2Y) {
+                else if (rect1X + rect1W >= rect2X && rect1X + rect1W <= rect2X + rect2W && rect1Y <= rect2Y + rect2H && rect1Y + rect1H >= rect2Y) {
                     this.rb.velocity.x = 0;
                     this.sprite.position.x = rect2X - rect1W;
                 }
