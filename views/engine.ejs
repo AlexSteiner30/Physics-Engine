@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/engine.css" type="text/css">
     
     <script src="js/PhysicsEngine.js"></script>
+    <script src="js/Inspector.js"></script>
 
     <script src="js/Draw.js"></script>
     <script src="js/Managers/Manager.js"></script>
@@ -49,6 +50,54 @@
             <input type="checkbox" id="force-arrows"> <label for="force-arrows">Show force arrows</label>
         </div>
 
+        <div class="object-creation">
+
+            <h3>Object Creation</h3>
+
+            <label >Type:</label>
+
+            <select name="types">
+                <option value="Rectangle" selected>Rectangle</option>
+                <option value="Circle">Circle</option>
+            </select>
+
+            <div id="rect-form">
+                <br>
+
+                <label>Width</label>
+                <input type="number" name="w" id="w">
+
+                <br>
+                <br>
+
+                <label>Height</label>
+                <input type="number" name="h" id="h">
+
+                <br>
+                <br>
+                
+                <label>Color</label>
+                <input type="color" name="rect-color" id="rect-color">
+
+            </div >
+
+            <form>
+                <br>
+
+                <label>R</label>
+                <input type="number" name="r" id="r">
+
+                <br>
+                <br>
+
+                <label>Color</label>
+                <input type="color" name="circle-color" id="rect-color">
+
+            </form>
+
+            <br>
+        </div>
+
         <hr>
         
         <button onClick="Reset()">Reset</button>
@@ -60,6 +109,7 @@
 
     <script>
         Default();
+        Reset();
     </script>
 </body>
 </html>

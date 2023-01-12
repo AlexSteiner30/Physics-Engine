@@ -1,0 +1,1 @@
+document.getElementById("rect-form").style.display = "none";
