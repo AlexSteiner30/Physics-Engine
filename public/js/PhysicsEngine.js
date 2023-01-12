@@ -18,15 +18,17 @@ function Initialize(){
     var pos_ = new Vector2(462, 250);
     var obj_ = new Object();
 
-    obj_.AddComponent(new Sprite2D('rect', pos_, 100, 100, 'red', true, 2));
+    obj_.AddComponent(new Sprite2D('rect', pos_, 100, 100, 'blue', true, 2));
     obj_.AddComponent(new Rigidbody2D(100));
     obj_.AddComponent(new Collider2D());
     obj_.AddComponent(new Draggable());
 
-    var pos2 = new Vector2(80, 350);
+    var pos2 = new Vector2(80, 280);
     var obj2 = new Object();
 
-    obj2.AddComponent(new Sprite2D('circle', pos2, 50, 0, 'blue', true, 2));
+    obj2.AddComponent(new Sprite2D('rect', pos2, 100, 100, 'gold', true, 2))
+    obj2.AddComponent(new Collider2D());
+    obj2.AddComponent(new Rigidbody2D(100, false, true));
 
     var pos3 = new Vector2(200, 500);
     var obj3 = new Object();

@@ -1,5 +1,5 @@
 class Rigidbody2D{
-    constructor( _mass = 1, _useGravity = true){
+    constructor( _mass = 1, _useGravity = true, x=false){
         this.acceleration = new Vector2(0, 0);
         this.velocity = new Vector2(0, 0);
 
@@ -7,6 +7,7 @@ class Rigidbody2D{
         this.mass = _mass;
 
         this.mouseDragging = false;
+        this.x = x;
     };
 
     ExecuteAwake(){
@@ -34,6 +35,10 @@ class Rigidbody2D{
             this.sprite.position.set(mouseX-this.sprite.w/2, mouseY-this.sprite.h/2);
             this.acceleration.mult(0);
             this.velocity.mult(0);
+        }
+
+        if(this.x){
+            this.AddForce(new Vector2(.75, 0));
         }
     }
 
